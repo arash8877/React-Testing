@@ -13,7 +13,7 @@ const ExpandableText = ({ text }: { text: string }) => {
       ) : (
         <article>{text.substring(0, limit)}...</article>
       )}
-      <button onClick={() => setExpanded(!isExpanded)}>
+      <button className="btn mt-1" onClick={() => setExpanded(!isExpanded)}>
         {isExpanded ? "Show Less" : "Show More"}
       </button>
     </div>
