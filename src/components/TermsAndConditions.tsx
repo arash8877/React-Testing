@@ -6,10 +6,7 @@ const TermsAndConditions = () => {
   return (
     <div>
       <h1>Terms & Conditions</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem,
-        delectus.
-      </p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, delectus.</p>
       <div className="pb-3">
         <label htmlFor="agree">
           <input
@@ -17,7 +14,7 @@ const TermsAndConditions = () => {
             id="agree"
             checked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
-            className="mr-1"
+            className="mr-1 w-4 h-4 accent-blue-600 bg-white border border-gray-300 rounded appearance-none checked:appearance-auto"
           />
           I accept the terms and conditions.
         </label>
