@@ -6,7 +6,7 @@ const TagList = () => {
 
   useEffect(() => {
     const fetchTags = async () => {
-      await delay(500);
+      await delay(500); //simulating receive tags from backend
       setTags(["tag1", "tag2", "tag3"]);
     };
     fetchTags();
