@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import TagList from "../../src/components/TagList";
 
 // this test, testing an async component that fetches data
@@ -13,7 +13,7 @@ describe("TagList", () => {
     //   expect(listItems.length).toBeGreaterThan(0);
     // });
 
-    const listItems = await screen.findAllByRole("listitem"); // findAllByRole is a combination of waitFor() and getAllByRole 
+    const listItems = await screen.findAllByRole("listitem"); // findAllByRole is a combination of waitFor() and getAllByRole and 
     expect(listItems.length).toBeGreaterThan(0);
   });
 });
