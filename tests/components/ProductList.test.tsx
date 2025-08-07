@@ -2,8 +2,27 @@ import { render, screen } from "@testing-library/react";
 import ProductList from "../../src/components/ProductList";
 import { server } from "../mocks/server";
 import { http, HttpResponse } from "msw";
+import { db } from "../mocks/db";
 
 describe("ProductList", () => {
+
+  // before running our tests, we can populate it with some data with creating 3 products
+  // to make sure our tests run in a clean state and don't mess with our global database object, 
+  //we should always do clean up with afterAll hook
+
+  const productIds : number[] = [];
+
+  beforeAll(() => {
+    
+    [1, 2, 3].forEach(() => {
+      const product = db.product.create();
+      productIds.push(product.id);
+  });
+
+  afterAll(() => {
+    db.product.deleteMany({where: {id: { in: productIds}}}) //clear only products created in this test ==> productIds array
+  });
+
   it("should render the list of products", async () => {
     render(<ProductList />);
 
